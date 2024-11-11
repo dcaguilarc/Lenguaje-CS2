@@ -1,0 +1,25 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">¡Hola, mundo!</h1>
+    <button id="colorButton" class="btn btn-primary">Cambiar color de fondo</button>
+</div>
+
+<script>
+    document.getElementById("colorButton").addEventListener("click", function() {
+        document.body.style.backgroundColor = getRandomColor();
+    });
+
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+</script>
